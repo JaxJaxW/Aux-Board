@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;PinConfigs&apos; to &apos;AUX_steeringwheel_code&apos;" description="Move &apos;PinConfigs&apos; to &apos;AUX_steeringwheel_code&apos;" destination="/AUX_steeringwheel_code" element1="Drivers/PinConfigs" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1572306552152" updateReferences="true"/>
+</session>

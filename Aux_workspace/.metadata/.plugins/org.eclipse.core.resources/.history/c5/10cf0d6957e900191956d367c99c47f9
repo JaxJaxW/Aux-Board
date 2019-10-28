@@ -1,0 +1,248 @@
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "PinConfiguration.h"
+
+
+u_int16_t sineArr[] = { 0x800,0x832,0x864,0x897,0x8c9,0x8fb,0x92d,0x95e,
+		0x990,0x9c1,0x9f2,0xa22,0xa53,0xa82,0xab2,0xae1,
+		0xb10,0xb3e,0xb6c,0xb99,0xbc5,0xbf1,0xc1d,0xc48,
+		0xc72,0xc9b,0xcc4,0xcec,0xd13,0xd3a,0xd5f,0xd84,
+		0xda8,0xdcb,0xded,0xe0f,0xe2f,0xe4f,0xe6d,0xe8a,
+		0xea7,0xec2,0xedd,0xef6,0xf0e,0xf25,0xf3b,0xf50,
+		0xf64,0xf77,0xf88,0xf99,0xfa8,0xfb6,0xfc3,0xfce,
+		0xfd9,0xfe2,0xfea,0xff1,0xff6,0xffa,0xffe,0xfff,
+		0x1000,0xfff,0xffe,0xffa,0xff6,0xff1,0xfea,0xfe2,
+		0xfd9,0xfce,0xfc3,0xfb6,0xfa8,0xf99,0xf88,0xf77,
+		0xf64,0xf50,0xf3b,0xf25,0xf0e,0xef6,0xedd,0xec2,
+		0xea7,0xe8a,0xe6d,0xe4f,0xe2f,0xe0f,0xded,0xdcb,
+		0xda8,0xd84,0xd5f,0xd3a,0xd13,0xcec,0xcc4,0xc9b,
+		0xc72,0xc48,0xc1d,0xbf1,0xbc5,0xb99,0xb6c,0xb3e,
+		0xb10,0xae1,0xab2,0xa82,0xa53,0xa22,0x9f2,0x9c1,
+		0x990,0x95e,0x92d,0x8fb,0x8c9,0x897,0x864,0x832,
+		0x800,0x7ce,0x79c,0x769,0x737,0x705,0x6d3,0x6a2,
+		0x670,0x63f,0x60e,0x5de,0x5ad,0x57e,0x54e,0x51f,
+		0x4f0,0x4c2,0x494,0x467,0x43b,0x40f,0x3e3,0x3b8,
+		0x38e,0x365,0x33c,0x314,0x2ed,0x2c6,0x2a1,0x27c,
+		0x258,0x235,0x213,0x1f1,0x1d1,0x1b1,0x193,0x176,
+		0x159,0x13e,0x123,0x10a,0xf2,0xdb,0xc5,0xb0,
+		0x9c,0x89,0x78,0x67,0x58,0x4a,0x3d,0x32,
+		0x27,0x1e,0x16,0xf,0xa,0x6,0x2,0x1,
+		0x0,0x1,0x2,0x6,0xa,0xf,0x16,0x1e,
+		0x27,0x32,0x3d,0x4a,0x58,0x67,0x78,0x89,
+		0x9c,0xb0,0xc5,0xdb,0xf2,0x10a,0x123,0x13e,
+		0x159,0x176,0x193,0x1b1,0x1d1,0x1f1,0x213,0x235,
+		0x258,0x27c,0x2a1,0x2c6,0x2ed,0x314,0x33c,0x365,
+		0x38e,0x3b8,0x3e3,0x40f,0x43b,0x467,0x494,0x4c2,
+		0x4f0,0x51f,0x54e,0x57e,0x5ad,0x5de,0x60e,0x63f,
+		0x670,0x6a2,0x6d3,0x705,0x737,0x769,0x79c,0x7ce };
+
+
+UART_HandleTypeDef huart2;
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+void GPIO_init(void);
+void DAC_init(void);
+
+
+int main(void)
+{
+  
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+  GPIO_init();
+  DAC_init();
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  uint8_t index= 0;
+  while (1)
+  {
+
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	  HAL_Delay(1);
+	  DAC->DHR12R1 = sineArr[index++];
+  }
+
+}
+
+
+
+
+
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+
+  /** Initializes the CPU, AHB and APB busses clocks 
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Initializes the CPU, AHB and APB busses clocks 
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI48;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
+  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 38400;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : B1_Pin */
+  GPIO_InitStruct.Pin = B1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LD2_Pin */
+  GPIO_InitStruct.Pin = LD2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+
+
+
+}
+
+//initializations of ports
+void GPIO_init(void)
+{
+	/*MODER
+	 * 00: input
+	 * 01: output
+	 * 10: //
+	 * 11: analog
+	 * */
+
+	//Practice: output sinusoid to portD
+	GPIOA->MODER = (0b01 << 4); //input
+	GPIOA->OSPEEDR = (0b01 <<4);
+	GPIOA->BSRR = (1 <<20);
+}
+
+void DAC_init()
+{
+	DAC->CR = pin0_bm;
+}
+
+
+
+
+
+
+
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(char *file, uint32_t line)
+{ 
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
