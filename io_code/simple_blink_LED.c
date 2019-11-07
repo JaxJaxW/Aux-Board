@@ -13,17 +13,15 @@ int main(void)
   SystemClock_Config();
 
   MX_GPIO_Init();
-  //MX_USART2_UART_Init();
 
   uint16_t ms = 1000;
   uint8_t togglePin = 0;
   while (1)
   {
+	  //Toggle the LED2 Pin
 	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-
+	  //Delay by 2s
 	  HAL_Delay(2*ms);
-
-
   }
 }
 
@@ -44,11 +42,11 @@ static void MX_GPIO_Init(void)
 
 
   /*Configure GPIO pin : PC1 */		//Port C Pin 1
-	GPIO_InitStruct.Pin = GPIO_PIN_1;
-	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+	GPIO_InitStruct.Pin = GPIO_PIN_1;		//Choose Pin#
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;	//Output, type: push-pull (3V3 or 0V)
+	GPIO_InitStruct.Pull = GPIO_NOPULL;		//no pulldown or pull up resistors
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;	//low speed for simple application
+	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);		//create pin object
 
 	//Configure GPIO pin : LD2_Pin 	//LED 2
 	GPIO_InitStruct.Pin = LD2_Pin;
@@ -56,26 +54,10 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
    HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
-
-/*
-	//Configure GPIO pin : B1_Pin 	//Button 1
-	GPIO_InitStruct.Pin = B1_Pin;
-	GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
-
-
-
-*/
-
-
-
 }
 
 
-
-
+//************************DON'T WORRY**************************************************
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -114,39 +96,6 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 }
-
-/**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
-
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 38400;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
-
-
-
 void Error_Handler(void)
 {
 }
