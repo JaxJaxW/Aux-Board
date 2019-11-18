@@ -20,8 +20,8 @@ int main(void)
 
 	 while (1)
 	 {
-	      HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-	      HAL_Delay(500);
+	      /*HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	      HAL_Delay(500);*/
 /*
 	      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET);
 	      HAL_Delay(500);
@@ -30,14 +30,126 @@ int main(void)
 	      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET);
 	      HAL_Delay(ms);
 */
-	      if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0))
+		 /*
+	      // Port A - Eco_in, Horn_in, CLED_out
+	      if(HAL_GPIO_ReadPin(GPIOA, Eco_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOA, Eco_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOA, Eco_in, GPIO_PIN_RESET);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOA, Horn_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOA, Horn_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOA, Horn_in, GPIO_PIN_RESET);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOA, CLED_out))
+		  {
+			  HAL_GPIO_TogglePin(GPIOA, CLED_out);
+		  }
+
+	      // Port B - LT_in, RT_in, Cruise_in, Cplus_in, Cminus_in
+
+	      if(HAL_GPIO_ReadPin(GPIOB, LT_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOB, LT_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOB, LT_in, GPIO_PIN_RESET);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOB, RT_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOB, RT_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOB, RT_in, GPIO_PIN_RESET);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOB, Cruise_in))
+		  {
+			  HAL_GPIO_TogglePin(GPIOB, Cruise_in);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOB, Cplus_in))
+		  {
+			  HAL_GPIO_TogglePin(GPIOB, Cplus_in);
+		  }
+
+	      if(HAL_GPIO_ReadPin(GPIOB, Cminus_in))
+		  {
+			  HAL_GPIO_TogglePin(GPIOB, Cminus_in);
+		  }
+
+	      // Port C - Regen_in, Headlights_in, Reverse_in
+	      if(HAL_GPIO_ReadPin(GPIOC, Regen_in))
+	      {
+	    	  HAL_GPIO_WritePin(GPIOC, Regen_in, GPIO_PIN_SET);
+	      }
+	      else
+	      {
+	    	  HAL_GPIO_WritePin(GPIOC, Regen_in, GPIO_PIN_RESET);
+	      }
+
+	      if(HAL_GPIO_ReadPin(GPIOC, Headlights_in))
+	      {
+	      	  HAL_GPIO_WritePin(GPIOC, Headlights_in, GPIO_PIN_SET);
+	      }
+	      else
+	      {
+	    	  HAL_GPIO_WritePin(GPIOC, Headlights_in, GPIO_PIN_RESET);
+	      }
+
+		  if(HAL_GPIO_ReadPin(GPIOC, Reverse_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOC, Reverse_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOC, Reverse_in, GPIO_PIN_RESET);
+		  }
+
+		  // Port D - Hazards_in
+
+		  if(HAL_GPIO_ReadPin(GPIOD, Hazards_in))
+		  {
+			  HAL_GPIO_WritePin(GPIOD, Hazards_in, GPIO_PIN_SET);
+		  }
+		  else
+		  {
+			  HAL_GPIO_WritePin(GPIOD, Hazards_in, GPIO_PIN_RESET);
+		  }*/
+
+		  // Button on MicroP
+		  if(!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13))
+		  {
+			  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+			  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		  }
+		  /*else
+		  {
+			  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+		  }*/
+
+
+
+	      /*if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0))
 	      {
 	    	  HAL_GPIO_WritePin(GPIOC, Horn_in, GPIO_PIN_SET);
 	      }
 	      else
 	      {
 	    	  HAL_GPIO_WritePin(GPIOC, Horn_in, GPIO_PIN_RESET);
-	      }
+	      }*/
 	 }
 
 }
@@ -152,10 +264,10 @@ static void MX_GPIO_Init(void)
 
 	    //Configure GPIO pin : PC1 Port C Pin 0
 	    GPIO_InitStruct.Pin = GPIO_PIN_0;
-	    	    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	    	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	    	    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+		GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+		GPIO_InitStruct.Pull = GPIO_NOPULL;
+		GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+		HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
 	    //Configure GPIO pin : LD2_Pin  //LED 2
 
@@ -165,6 +277,12 @@ static void MX_GPIO_Init(void)
 	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
+	   //Configure GPIO button : PC13 Port C Pin 13
+	   GPIO_InitStruct.Pin = GPIO_PIN_13;
+		GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+		GPIO_InitStruct.Pull = GPIO_NOPULL;
+		GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+		HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
 }
 
