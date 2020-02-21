@@ -1,0 +1,4 @@
+LightsBoardReceive.cpp:3:1:LightsBoardReceive::LightsBoardReceive(TIM_HandleTypeDef*)	16	static
+LightsBoardReceive.cpp:16:6:static void LightsBoardReceive::ReceiveAndSend(SUBSYSTEM_DATA_MODULE*)	32	static
+subsystem-data-module.hpp:164:13:CHILD_DATA SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACE<CHILD_OBJ, CHILD_DATA>::GetOldestDataPacket(bool*) [with CHILD_OBJ = AUX_MESSAGE_0; CHILD_DATA = AUX_MESSAGE_0_DATA_PACKET]	32	static
+helper-fifo.hpp:82:8:T* HELPER_FIFO<T, DEPTH, SIZE>::PopFront(bool*) [with T = unsigned char; short unsigned int DEPTH = 3; short unsigned int SIZE = 8]	24	static

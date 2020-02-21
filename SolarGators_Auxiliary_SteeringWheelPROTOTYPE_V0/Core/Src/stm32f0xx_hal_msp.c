@@ -78,6 +78,13 @@ void HAL_MspInit(void)
 }
 
 /**
+* @brief CAN MSP Initialization
+* This function configures the hardware resources used in this example
+* @param hcan: CAN handle pointer
+* @retval None
+*/
+
+/**
 * @brief TIM_Base MSP Initialization
 * This function configures the hardware resources used in this example
 * @param htim_base: TIM_Base handle pointer

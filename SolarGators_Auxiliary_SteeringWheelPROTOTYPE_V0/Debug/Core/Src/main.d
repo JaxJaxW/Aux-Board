@@ -17,8 +17,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/stm32f0xx_hal_can.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h \
@@ -27,13 +26,13 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/aux-data-module.hpp \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-data-module.hpp \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-info.hpp \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/helper-code/helper-fifo.hpp \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/helper-code/rx-module-binary-tree.hpp \
- d:\documents\solar\ gators\ programming\telemetry_2019-2020-master\dev-board\subsystem-can-driver\subsystem-info.hpp \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-data-module.hpp
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/aux-data-module.hpp \
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-data-module.hpp \
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-info.hpp \
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/helper-code/helper-fifo.hpp \
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/helper-code/rx-module-binary-tree.hpp \
+ d:\documents\solar\ gators\ programming\solargators_auxiliary_steeringwheelprototype_v0\core\subsystem-can-driver\subsystem-info.hpp \
+ D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-data-module.hpp
 
 ../Core/Inc/main.h:
 
@@ -73,9 +72,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/stm32f0xx_hal_can.h:
-
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h:
 
@@ -93,16 +90,16 @@ D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/sub
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/aux-data-module.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/aux-data-module.hpp:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-data-module.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-data-module.hpp:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-info.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-info.hpp:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/helper-code/helper-fifo.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/helper-code/helper-fifo.hpp:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/helper-code/rx-module-binary-tree.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/helper-code/rx-module-binary-tree.hpp:
 
-d:\documents\solar\ gators\ programming\telemetry_2019-2020-master\dev-board\subsystem-can-driver\subsystem-info.hpp:
+d:\documents\solar\ gators\ programming\solargators_auxiliary_steeringwheelprototype_v0\core\subsystem-can-driver\subsystem-info.hpp:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/subsystem-data-module.hpp:
+D:/Documents/Solar\ Gators\ Programming/SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0/Core/subsystem-can-driver/subsystem-data-module.hpp:

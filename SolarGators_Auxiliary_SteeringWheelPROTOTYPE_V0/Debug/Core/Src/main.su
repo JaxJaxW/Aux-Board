@@ -1,8 +1,11 @@
-main.cpp:111:6:void HAL_GPIO_EXTI_Callback(uint16_t)	16	static,ignoring_inline_asm
-main.cpp:248:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
-main.cpp:328:5:int main()	8	static
-main.cpp:387:6:void SystemClock_Config()	88	static
-main.cpp:420:13:void MX_TIM2_Init()	32	static
-main.cpp:465:13:void MX_TIM3_Init()	32	static
-main.cpp:510:13:void MX_GPIO_Init()	48	static
-main.cpp:583:6:void Error_Handler()	8	static
+main.cpp:92:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
+main.cpp:116:5:int main()	16	static
+main.cpp:235:6:void SystemClock_Config()	88	static
+main.cpp:271:13:void MX_TIM6_Init()	16	static
+main.cpp:304:13:void MX_GPIO_Init()	48	static
+main.cpp:369:6:void ReceiveAndSend(SUBSYSTEM_DATA_MODULE*)	16	static
+main.cpp:424:6:void Error_Handler()	8	static
+subsystem-data-module.hpp:164:13:CHILD_DATA SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACE<CHILD_OBJ, CHILD_DATA>::GetOldestDataPacket(bool*) [with CHILD_OBJ = AUX_MESSAGE_0; CHILD_DATA = AUX_MESSAGE_0_DATA_PACKET]	32	static
+helper-fifo.hpp:82:8:T* HELPER_FIFO<T, DEPTH, SIZE>::PopFront(bool*) [with T = unsigned char; short unsigned int DEPTH = 3; short unsigned int SIZE = 8]	24	static
+main.cpp:431:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:431:1:cpp)	8	static

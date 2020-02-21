@@ -18,8 +18,7 @@ Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o: \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h \
- D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/stm32f0xx_hal_can.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h \
@@ -65,9 +64,7 @@ Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o: \
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h:
 
-D:/Documents/Solar\ Gators\ Programming/Telemetry_2019-2020-master/dev-board/subsystem-can-driver/stm32f0xx_hal_can.h:
-
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h:
 

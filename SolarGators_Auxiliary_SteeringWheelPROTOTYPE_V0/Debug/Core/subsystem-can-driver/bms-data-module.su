@@ -1,0 +1,5 @@
+bms-data-module.cpp:30:6:static void BMS_MESSAGE_0::dataPacketToArray(BMS_MESSAGE_0_DATA_PACKET, uint8_t*)	48	static
+bms-data-module.cpp:47:27:static BMS_MESSAGE_0_DATA_PACKET BMS_MESSAGE_0::arrayToDataPacket(uint8_t*)	32	static
+bms-data-module.cpp:63:1:BMS_MESSAGE_0::BMS_MESSAGE_0()	16	static
+subsystem-data-module.hpp:180:2:SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACE<CHILD_OBJ, CHILD_DATA>::SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACE(uint32_t, uint8_t, bool) [with CHILD_OBJ = BMS_MESSAGE_0; CHILD_DATA = BMS_MESSAGE_0_DATA_PACKET]	32	static
+subsystem-data-module.hpp:184:15:void SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACE<CHILD_OBJ, CHILD_DATA>::fillTransmitBuffer() [with CHILD_OBJ = BMS_MESSAGE_0; CHILD_DATA = BMS_MESSAGE_0_DATA_PACKET]	24	static

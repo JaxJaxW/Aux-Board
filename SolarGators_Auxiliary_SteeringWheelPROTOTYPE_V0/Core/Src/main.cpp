@@ -42,7 +42,6 @@
 #include "subsystem-data-module.hpp"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 #include "stdbool.h"
 
 /* USER CODE END Includes */
@@ -64,8 +63,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-//Initializes Lights Board Class
-volatile LightsBoardReceive lights = LightsBoardReceive();
+//Lights Board Variables
+AUX_MESSAGE_0_DATA_PACKET auxPacket;
+AUX_MESSAGE_0 aux0;
+bool receivedSomething;
+TIM_HandleTypeDef htim6;
 
 
 /* USER CODE BEGIN PV */
@@ -74,10 +76,10 @@ CAN_HandleTypeDef hcan = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
+void ReceiveAndSend(SUBSYSTEM_DATA_MODULE*);
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_TIM2_Init(void);
-static void MX_TIM3_Init(void);
+static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
 volatile bool state = true;
@@ -90,16 +92,16 @@ volatile bool state = true;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 {
-	if(lights.auxPacket.hazards == true)
+	if(auxPacket.hazardsOn == true)
 	{
 		HAL_GPIO_TogglePin(LT_out_GPIO_Port, LT_out_Pin);
-		HAL_GPIO_TogglePIn(RT_out_GPIO_Port, RT_out_Pin);
+		HAL_GPIO_TogglePin(RT_out_GPIO_Port, RT_out_Pin);
 	}
-	else if (lights.auxPacket.leftOn == true)
+	else if (auxPacket.leftOn == true)
 	{
 		HAL_GPIO_TogglePin(LT_out_GPIO_Port, LT_out_Pin);
 	}
-	else if (lights.auxPacket.rightOn == true)
+	else if (auxPacket.rightOn == true)
 	{
 		HAL_GPIO_TogglePin(RT_out_GPIO_Port, RT_out_Pin);
 	}
@@ -114,7 +116,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	aux0.SetupReceive(ReceiveAndSend);
+	bool receivedSomething;
   /* USER CODE END 1 */
   
 
@@ -135,31 +138,10 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-
-  // PORT C, PIN 0 & PIN 1 INITIALIZATION
-
-  // TIM2 & TIM3 INITIALIZATION
-  /*AUX_MESSAGE_0 aux0;
-  aux0.SetupReceive(AuxTransmitConfirmation);*/
-
   SUBSYSTEM_DATA_MODULE::StartCAN(&hcan);
-
-  //aux0.txData = {true, true, true, true};
-  //aux0.SendData();
-  /*
-   * if(!aux0.isFifoEmpty())
-   * {
-   * 	bool receivedSomething;
-   * 	AUX_MESSAGE_0_DATA_PACKET auxPacket = aux0.GetOldestDataPacket(&receivedSomething)
-   * 	if(receivedSomething)
-   * 	{
-   * 		//Nice
-   * 		float l = mpptPacket.arrayCurrent;
-   * 	}
-   * }
-   */
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -170,7 +152,52 @@ int main(void)
   {
 
     /* USER CODE END WHILE */
-
+	  	auxPacket = aux0.GetOldestDataPacket(&receivedSomething);
+	  	if(receivedSomething)
+	  	{
+	  		if (auxPacket.hazardsOn)
+	  		{
+	  			//Turn on Interrupt
+	  			HAL_TIM_Base_Start_IT(&htim6);
+	  			//The interrupt is going to toggle the hazards
+	  		}
+	  		else
+	  		{
+	  			//Turn off the Interrupt
+	  			HAL_TIM_Base_Stop_IT(&htim6);
+	  			//Turn off left and right
+	  			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_RESET);
+	  			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_RESET);
+	  		}
+	  		if (auxPacket.headlightsOn)
+	  		{
+	  			HAL_GPIO_WritePin(Headlights_out_GPIO_Port, Headlights_out_Pin, GPIO_PIN_SET);
+	  		}
+	  		else
+	  		{
+	  			HAL_GPIO_WritePin(Headlights_out_GPIO_Port, Headlights_out_Pin, GPIO_PIN_RESET);
+	  		}
+	  		if (auxPacket.leftOn)
+	  		{
+	  			HAL_TIM_Base_Start_IT(&htim6);
+	  			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_SET);
+	  		}
+	  		else
+	  		{
+	  			HAL_TIM_Base_Stop_IT(&htim6);
+	  			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_RESET);
+	  		}
+	  		if (auxPacket.rightOn)
+	  		{
+	  			HAL_TIM_Base_Start_IT(&htim6);
+	  			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_SET);
+	  		}
+	  		else
+	  		{
+	  			HAL_TIM_Base_Stop_IT(&htim6);
+	  			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_RESET);
+	  		}
+	  	}
     /* USER CODE BEGIN 3 */
 
   }
@@ -218,7 +245,153 @@ void SystemClock_Config(void)
 
 
 /* USER CODE BEGIN 4 */
+static void MX_TIM6_Init(void)
+{
 
+  /* USER CODE BEGIN TIM6_Init 0 */
+//
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+//
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 32000;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 750;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+//
+  /* USER CODE END TIM6_Init 2 */
+
+}
+
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(Cruise_LED_GPIO_Port, Cruise_LED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(Dev_LED_GPIO_Port, Dev_LED_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED_out_GPIO_Port, LED_out_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : Dev_Btn_Pin */
+  GPIO_InitStruct.Pin = Dev_Btn_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Dev_Btn_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Cruise_LED_Pin */
+  GPIO_InitStruct.Pin = Cruise_LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(Cruise_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Eco_in_Pin */
+  GPIO_InitStruct.Pin = Eco_in_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Eco_in_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Dev_LED_Pin */
+  GPIO_InitStruct.Pin = Dev_LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(Dev_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LED_out_Pin */
+  GPIO_InitStruct.Pin = LED_out_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_out_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LT_in_Pin Cruise_in_Pin CPlus_in_Pin Hazards_in_Pin
+                           Regen_in_Pin */
+  GPIO_InitStruct.Pin = LT_in_Pin|Cruise_in_Pin|CPlus_in_Pin|Hazards_in_Pin
+                          |Regen_in_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
+
+}
+
+void ReceiveAndSend(SUBSYSTEM_DATA_MODULE*)
+{
+	auxPacket = aux0.GetOldestDataPacket(&receivedSomething);
+	if(receivedSomething)
+	{
+		if (auxPacket.hazardsOn)
+		{
+			//Turn on Interrupt
+			HAL_TIM_Base_Start_IT(&htim6);
+			//The interrupt is going to toggle the hazards
+		}
+		else
+		{
+			//Turn off the Interrupt
+			HAL_TIM_Base_Stop_IT(&htim6);
+			//Turn off left and right
+			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_RESET);
+		}
+		if (auxPacket.headlightsOn)
+		{
+			HAL_GPIO_WritePin(Headlights_out_GPIO_Port, Headlights_out_Pin, GPIO_PIN_SET);
+		}
+		else
+		{
+			HAL_GPIO_WritePin(Headlights_out_GPIO_Port, Headlights_out_Pin, GPIO_PIN_RESET);
+		}
+		if (auxPacket.leftOn)
+		{
+			HAL_TIM_Base_Start_IT(&htim6);
+			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_SET);
+		}
+		else
+		{
+			HAL_TIM_Base_Stop_IT(&htim6);
+			HAL_GPIO_WritePin(LT_out_GPIO_Port, LT_out_Pin, GPIO_PIN_RESET);
+		}
+		if (auxPacket.rightOn)
+		{
+			HAL_TIM_Base_Start_IT(&htim6);
+			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_SET);
+		}
+		else
+		{
+			HAL_TIM_Base_Stop_IT(&htim6);
+			HAL_GPIO_WritePin(RT_out_GPIO_Port, RT_out_Pin, GPIO_PIN_RESET);
+		}
+	}
+}
 /* USER CODE END 4 */
 
 /**

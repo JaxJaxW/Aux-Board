@@ -84,7 +84,14 @@ void Error_Handler(void);
 #define Regen_in_GPIO_Port GPIOB
 #define Regen_in_EXTI_IRQn EXTI4_15_IRQn
 /* USER CODE BEGIN Private defines */
-
+#define Headlights_out_GPIO_Port GPIOB
+#define Headlights_out_Pin GPIO_PIN_5
+#define Reverse_out_GPIO_Port GPIOB
+#define Reverse_out_Pin GPIO_PIN_3
+#define RT_out_GPIO_Port GPIOC
+#define RT_out_Pin GPIO_PIN_11
+#define LT_out_GPIO_Port GPIOC
+#define LT_out_Pin GPIO_PIN_10
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
