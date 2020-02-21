@@ -5,7 +5,6 @@
 "Core/Src/sysmem.o"
 "Core/Src/system_stm32f0xx.o"
 "Core/Startup/startup_stm32f072rbtx.o"
-"Core/subsystem-can-driver/LightsBoardReceive.o"
 "Core/subsystem-can-driver/aux-data-module.o"
 "Core/subsystem-can-driver/bms-data-module.o"
 "Core/subsystem-can-driver/mppt-data-module.o"

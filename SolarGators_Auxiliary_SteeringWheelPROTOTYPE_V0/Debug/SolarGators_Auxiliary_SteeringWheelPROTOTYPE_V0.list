@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000028  00000000  00000000  00020074  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000bb84  00000000  00000000  0002009c  2**0
+ 12 .debug_info   0000bb82  00000000  00000000  0002009c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 0000223c  00000000  00000000  0002bc20  2**0
+ 13 .debug_abbrev 00002252  00000000  00000000  0002bc1e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000bf8  00000000  00000000  0002de60  2**3
+ 14 .debug_aranges 00000bf8  00000000  00000000  0002de70  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000b00  00000000  00000000  0002ea58  2**3
+ 15 .debug_ranges 00000b00  00000000  00000000  0002ea68  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  00017f8d  00000000  00000000  0002f558  2**0
+ 16 .debug_macro  00017f8d  00000000  00000000  0002f568  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000933a  00000000  00000000  000474e5  2**0
+ 17 .debug_line   00009338  00000000  00000000  000474f5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    00080290  00000000  00000000  0005081f  2**0
+ 18 .debug_str    00080290  00000000  00000000  0005082d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000d0aaf  2**0
+ 19 .comment      0000007b  00000000  00000000  000d0abd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002d18  00000000  00000000  000d0b2c  2**2
+ 20 .debug_frame  00002d18  00000000  00000000  000d0b38  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -504,11 +504,7 @@ int main(void)
  800040e:	f000 f90d 	bl	800062c <_ZL12MX_GPIO_Initv>
   MX_TIM6_Init();
  8000412:	f000 f8c7 	bl	80005a4 <_ZL12MX_TIM6_Initv>
-
-  // TIM2 & TIM3 INITIALIZATION
-  /*AUX_MESSAGE_0 aux0;
-  aux0.SetupReceive(AuxTransmitConfirmation);*/
-
+  /* USER CODE BEGIN 2 */
   SUBSYSTEM_DATA_MODULE::StartCAN(&hcan);
  8000416:	4b3c      	ldr	r3, [pc, #240]	; (8000508 <main+0x114>)
  8000418:	0018      	movs	r0, r3

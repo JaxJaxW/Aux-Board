@@ -18,8 +18,6 @@ d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externalt
                               d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
                               d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o (__libc_init_array)
-d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
-                              Core/subsystem-can-driver/LightsBoardReceive.o (memcpy)
 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
                               d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o (memset)
 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-signal.o)
@@ -546,125 +544,6 @@ Discarded input sections
  .text          0x0000000000000000       0x14 Core/Startup/startup_stm32f072rbtx.o
  .data          0x0000000000000000        0x0 Core/Startup/startup_stm32f072rbtx.o
  .bss           0x0000000000000000        0x0 Core/Startup/startup_stm32f072rbtx.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .group         0x0000000000000000        0xc Core/subsystem-can-driver/LightsBoardReceive.o
- .text          0x0000000000000000        0x0 Core/subsystem-can-driver/LightsBoardReceive.o
- .data          0x0000000000000000        0x0 Core/subsystem-can-driver/LightsBoardReceive.o
- .bss           0x0000000000000000        0x0 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL12NUM_MESSAGESE
-                0x0000000000000000        0x1 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL11AUX0_MSG_IDE
-                0x0000000000000000        0x2 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL15AUX0_MSG_LENGTHE
-                0x0000000000000000        0x1 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL12MPPT0_MSG_IDE
-                0x0000000000000000        0x2 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL16MPPT0_MSG_LENGTHE
-                0x0000000000000000        0x1 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL11BMS0_MSG_IDE
-                0x0000000000000000        0x2 Core/subsystem-can-driver/LightsBoardReceive.o
- .rodata._ZN14subsystem_infoL15BMS0_MSG_LENGTHE
-                0x0000000000000000        0x1 Core/subsystem-can-driver/LightsBoardReceive.o
- .text._ZN18LightsBoardReceiveC2EP17TIM_HandleTypeDef
-                0x0000000000000000       0x58 Core/subsystem-can-driver/LightsBoardReceive.o
- .text._ZN18LightsBoardReceive14ReceiveAndSendEP21SUBSYSTEM_DATA_MODULE
-                0x0000000000000000      0x118 Core/subsystem-can-driver/LightsBoardReceive.o
- .text._ZN40SUBSYSTEM_DATA_MODULE_TEMPLATE_INTERFACEI13AUX_MESSAGE_025AUX_MESSAGE_0_DATA_PACKETE19GetOldestDataPacketEPb
-                0x0000000000000000       0x90 Core/subsystem-can-driver/LightsBoardReceive.o
- .text._ZN11HELPER_FIFOIhLt3ELt8EE8PopFrontEPb
-                0x0000000000000000       0x86 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_info    0x0000000000000000      0xb82 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_abbrev  0x0000000000000000      0x2cc Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_aranges
-                0x0000000000000000       0x38 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_ranges  0x0000000000000000       0x28 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x1fd Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0xb1a Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x133 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x2e Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x22 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x1c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x22 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x8e Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x51 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0xef Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x6a Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x1df Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x1c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x22 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0xb5 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x391 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000     0xfe50 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x3c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x17b Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x53 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x946 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x5f3 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x12f Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x1a7 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x1a7 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x22c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x34 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x43 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x28 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x408 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0xb0 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x217 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x22c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x5f Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0xa5 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x4c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x16d Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x8ae Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0x28 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000      0x130 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_macro   0x0000000000000000       0xca Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_line    0x0000000000000000      0x7f9 Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_str     0x0000000000000000    0x77b9b Core/subsystem-can-driver/LightsBoardReceive.o
- .comment       0x0000000000000000       0x7c Core/subsystem-can-driver/LightsBoardReceive.o
- .debug_frame   0x0000000000000000       0x90 Core/subsystem-can-driver/LightsBoardReceive.o
- .ARM.attributes
-                0x0000000000000000       0x31 Core/subsystem-can-driver/LightsBoardReceive.o
  .group         0x0000000000000000        0xc Core/subsystem-can-driver/aux-data-module.o
  .group         0x0000000000000000        0xc Core/subsystem-can-driver/aux-data-module.o
  .group         0x0000000000000000        0xc Core/subsystem-can-driver/aux-data-module.o
@@ -3474,13 +3353,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
  .data          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
  .bss           0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
- .text          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
- .data          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
- .bss           0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
- .text.memcpy   0x0000000000000000       0x12 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000000000       0x28 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
- .ARM.attributes
-                0x0000000000000000       0x2c d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
  .text          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
  .data          0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
  .bss           0x0000000000000000        0x0 d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
@@ -3645,7 +3517,6 @@ LOAD Core/Src/syscalls.o
 LOAD Core/Src/sysmem.o
 LOAD Core/Src/system_stm32f0xx.o
 LOAD Core/Startup/startup_stm32f072rbtx.o
-LOAD Core/subsystem-can-driver/LightsBoardReceive.o
 LOAD Core/subsystem-can-driver/aux-data-module.o
 LOAD Core/subsystem-can-driver/bms-data-module.o
 LOAD Core/subsystem-can-driver/mppt-data-module.o
@@ -4231,41 +4102,41 @@ LOAD d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000588       0x1e d:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
 OUTPUT(SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0xbb84
- .debug_info    0x0000000000000000     0x13bd Core/Src/main.o
- .debug_info    0x00000000000013bd      0x746 Core/Src/stm32f0xx_hal_msp.o
- .debug_info    0x0000000000001b03      0x1c9 Core/Src/stm32f0xx_it.o
- .debug_info    0x0000000000001ccc      0xebd Core/Src/syscalls.o
- .debug_info    0x0000000000002b89      0x29e Core/Src/system_stm32f0xx.o
- .debug_info    0x0000000000002e27       0x22 Core/Startup/startup_stm32f072rbtx.o
- .debug_info    0x0000000000002e49     0x1028 Core/subsystem-can-driver/aux-data-module.o
- .debug_info    0x0000000000003e71     0x1243 Core/subsystem-can-driver/subsystem-data-module.o
- .debug_info    0x00000000000050b4      0x8a3 Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
- .debug_info    0x0000000000005957      0x6c0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
- .debug_info    0x0000000000006017      0xf1e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
- .debug_info    0x0000000000006f35      0x78c Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
- .debug_info    0x00000000000076c1      0x67a Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
- .debug_info    0x0000000000007d3b      0x82d Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
- .debug_info    0x0000000000008568     0x252c Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
- .debug_info    0x000000000000aa94     0x10f0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
+.debug_info     0x0000000000000000     0xbb82
+ .debug_info    0x0000000000000000     0x13bb Core/Src/main.o
+ .debug_info    0x00000000000013bb      0x746 Core/Src/stm32f0xx_hal_msp.o
+ .debug_info    0x0000000000001b01      0x1c9 Core/Src/stm32f0xx_it.o
+ .debug_info    0x0000000000001cca      0xebd Core/Src/syscalls.o
+ .debug_info    0x0000000000002b87      0x29e Core/Src/system_stm32f0xx.o
+ .debug_info    0x0000000000002e25       0x22 Core/Startup/startup_stm32f072rbtx.o
+ .debug_info    0x0000000000002e47     0x1028 Core/subsystem-can-driver/aux-data-module.o
+ .debug_info    0x0000000000003e6f     0x1243 Core/subsystem-can-driver/subsystem-data-module.o
+ .debug_info    0x00000000000050b2      0x8a3 Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
+ .debug_info    0x0000000000005955      0x6c0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+ .debug_info    0x0000000000006015      0xf1e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
+ .debug_info    0x0000000000006f33      0x78c Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
+ .debug_info    0x00000000000076bf      0x67a Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
+ .debug_info    0x0000000000007d39      0x82d Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .debug_info    0x0000000000008566     0x252c Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
+ .debug_info    0x000000000000aa92     0x10f0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
-.debug_abbrev   0x0000000000000000     0x223c
- .debug_abbrev  0x0000000000000000      0x37f Core/Src/main.o
- .debug_abbrev  0x000000000000037f      0x18e Core/Src/stm32f0xx_hal_msp.o
- .debug_abbrev  0x000000000000050d       0xc6 Core/Src/stm32f0xx_it.o
- .debug_abbrev  0x00000000000005d3      0x261 Core/Src/syscalls.o
- .debug_abbrev  0x0000000000000834      0x12b Core/Src/system_stm32f0xx.o
- .debug_abbrev  0x000000000000095f       0x12 Core/Startup/startup_stm32f072rbtx.o
- .debug_abbrev  0x0000000000000971      0x405 Core/subsystem-can-driver/aux-data-module.o
- .debug_abbrev  0x0000000000000d76      0x442 Core/subsystem-can-driver/subsystem-data-module.o
- .debug_abbrev  0x00000000000011b8      0x276 Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
- .debug_abbrev  0x000000000000142e      0x1c7 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
- .debug_abbrev  0x00000000000015f5      0x1b7 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
- .debug_abbrev  0x00000000000017ac      0x273 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
- .debug_abbrev  0x0000000000001a1f      0x1c0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
- .debug_abbrev  0x0000000000001bdf      0x20f Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
- .debug_abbrev  0x0000000000001dee      0x230 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
- .debug_abbrev  0x000000000000201e      0x21e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
+.debug_abbrev   0x0000000000000000     0x2252
+ .debug_abbrev  0x0000000000000000      0x395 Core/Src/main.o
+ .debug_abbrev  0x0000000000000395      0x18e Core/Src/stm32f0xx_hal_msp.o
+ .debug_abbrev  0x0000000000000523       0xc6 Core/Src/stm32f0xx_it.o
+ .debug_abbrev  0x00000000000005e9      0x261 Core/Src/syscalls.o
+ .debug_abbrev  0x000000000000084a      0x12b Core/Src/system_stm32f0xx.o
+ .debug_abbrev  0x0000000000000975       0x12 Core/Startup/startup_stm32f072rbtx.o
+ .debug_abbrev  0x0000000000000987      0x405 Core/subsystem-can-driver/aux-data-module.o
+ .debug_abbrev  0x0000000000000d8c      0x442 Core/subsystem-can-driver/subsystem-data-module.o
+ .debug_abbrev  0x00000000000011ce      0x276 Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
+ .debug_abbrev  0x0000000000001444      0x1c7 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+ .debug_abbrev  0x000000000000160b      0x1b7 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
+ .debug_abbrev  0x00000000000017c2      0x273 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
+ .debug_abbrev  0x0000000000001a35      0x1c0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
+ .debug_abbrev  0x0000000000001bf5      0x20f Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .debug_abbrev  0x0000000000001e04      0x230 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
+ .debug_abbrev  0x0000000000002034      0x21e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
 .debug_aranges  0x0000000000000000      0xbf8
  .debug_aranges
@@ -4420,23 +4291,23 @@ OUTPUT(SolarGators_Auxiliary_SteeringWheelPROTOTYPE_V0.elf elf32-littlearm)
  .debug_macro   0x0000000000017c2e      0x1b0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_macro   0x0000000000017dde      0x1af Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
-.debug_line     0x0000000000000000     0x933a
- .debug_line    0x0000000000000000      0x951 Core/Src/main.o
- .debug_line    0x0000000000000951      0x6a6 Core/Src/stm32f0xx_hal_msp.o
- .debug_line    0x0000000000000ff7      0x6ea Core/Src/stm32f0xx_it.o
- .debug_line    0x00000000000016e1      0x742 Core/Src/syscalls.o
- .debug_line    0x0000000000001e23      0x6a3 Core/Src/system_stm32f0xx.o
- .debug_line    0x00000000000024c6       0x89 Core/Startup/startup_stm32f072rbtx.o
- .debug_line    0x000000000000254f      0x7c8 Core/subsystem-can-driver/aux-data-module.o
- .debug_line    0x0000000000002d17      0x938 Core/subsystem-can-driver/subsystem-data-module.o
- .debug_line    0x000000000000364f      0x92d Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
- .debug_line    0x0000000000003f7c      0x836 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
- .debug_line    0x00000000000047b2      0xb1d Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
- .debug_line    0x00000000000052cf      0x84e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
- .debug_line    0x0000000000005b1d      0x810 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
- .debug_line    0x000000000000632d      0x923 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
- .debug_line    0x0000000000006c50     0x1a68 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
- .debug_line    0x00000000000086b8      0xc82 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
+.debug_line     0x0000000000000000     0x9338
+ .debug_line    0x0000000000000000      0x94f Core/Src/main.o
+ .debug_line    0x000000000000094f      0x6a6 Core/Src/stm32f0xx_hal_msp.o
+ .debug_line    0x0000000000000ff5      0x6ea Core/Src/stm32f0xx_it.o
+ .debug_line    0x00000000000016df      0x742 Core/Src/syscalls.o
+ .debug_line    0x0000000000001e21      0x6a3 Core/Src/system_stm32f0xx.o
+ .debug_line    0x00000000000024c4       0x89 Core/Startup/startup_stm32f072rbtx.o
+ .debug_line    0x000000000000254d      0x7c8 Core/subsystem-can-driver/aux-data-module.o
+ .debug_line    0x0000000000002d15      0x938 Core/subsystem-can-driver/subsystem-data-module.o
+ .debug_line    0x000000000000364d      0x92d Core/subsystem-can-driver/helper-code/rx-module-binary-tree.o
+ .debug_line    0x0000000000003f7a      0x836 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+ .debug_line    0x00000000000047b0      0xb1d Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.o
+ .debug_line    0x00000000000052cd      0x84e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
+ .debug_line    0x0000000000005b1b      0x810 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
+ .debug_line    0x000000000000632b      0x923 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .debug_line    0x0000000000006c4e     0x1a68 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
+ .debug_line    0x00000000000086b6      0xc82 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
 .debug_str      0x0000000000000000    0x80290
  .debug_str     0x0000000000000000    0x77e4a Core/Src/main.o
